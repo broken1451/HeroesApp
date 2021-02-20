@@ -25,4 +25,16 @@ export class HeroesService {
    return  this.httpClient.get<Heroes[]>(`${URL}/heroes?q=${termino}&_limit=6`);
   }
 
+  addHero(heroe: Heroes): Observable<Heroes> {
+    return this.httpClient.post<Heroes>(`${URL}/heroes`, heroe);
+  }
+
+  updateHero(heroe: Heroes): Observable<Heroes> {
+    return this.httpClient.put<Heroes>(`${URL}/heroes/${heroe.id}`, heroe);
+  }
+
+  deleteHero(heroe: Heroes): Observable<{}> {
+    return this.httpClient.delete<{}>(`${URL}/heroes/${heroe.id}`);
+  }
+
 }

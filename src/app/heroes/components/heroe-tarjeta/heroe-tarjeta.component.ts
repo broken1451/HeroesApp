@@ -16,7 +16,6 @@ export class HeroeTarjetaComponent implements OnInit {
   ngOnInit(): void {}
 
   navigation(path: string, heroe: Heroes): void {
-    console.log({ path, heroe });
     if (path.includes('editar')) {
       this.router.navigate([path, heroe.id]);
     } else {

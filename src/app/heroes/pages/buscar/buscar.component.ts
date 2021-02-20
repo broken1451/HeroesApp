@@ -24,7 +24,7 @@ export class BuscarComponent implements OnInit {
   }
 
   optionSelect(event: MatAutocompleteSelectedEvent) {
-    if (!event.option.value || event.option.value == '') {
+    if (!event.option.value || event.option.value === '') {
       this.termino = '';
       this.heroeSelected = undefined;
       return;
@@ -32,8 +32,9 @@ export class BuscarComponent implements OnInit {
     const heroe: Heroes = event.option.value;
     this.termino = heroe.superhero;
     // id siempre tendra un valor
-    this.heroesService.getHeroeById(heroe.id!).subscribe((heroe) => {
-      this.heroeSelected = heroe;
+    // tslint:disable-next-line: no-non-null-assertion
+    this.heroesService.getHeroeById(heroe.id!).subscribe((hero: Heroes) => {
+      this.heroeSelected = hero;
     });
   }
 }

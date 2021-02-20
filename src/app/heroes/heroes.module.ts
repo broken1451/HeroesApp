@@ -11,7 +11,7 @@ import { ListadoComponent } from './pages/listado/listado.component';
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
-
+import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,14 @@ import { ImagenPipe } from './pipes/imagen.pipe';
     ListadoComponent,
     HeroeTarjetaComponent,
     ImagenPipe,
+    ConfirmarComponent,
   ],
-  imports: [CommonModule, FlexLayoutModule,FormsModule ,MaterialModule, HeroesRoutingModule],
+  imports: [
+    CommonModule,
+    FlexLayoutModule,
+    FormsModule,
+    MaterialModule,
+    HeroesRoutingModule,
+  ],
 })
 export class HeroesModule {}

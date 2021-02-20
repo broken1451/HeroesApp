@@ -8,7 +8,6 @@ import { HeroesService } from '../../services/heroes.service';
   styleUrls: ['./listado.component.scss'],
 })
 export class ListadoComponent implements OnInit {
-
   public heroes: Heroes[] = [];
   constructor(private heroesService: HeroesService) {}
 
